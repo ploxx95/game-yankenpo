@@ -6,8 +6,12 @@ import Score from './score'
 const HeaderStyled = styled.div`
     border: 2px solid rgba(255, 255,255,.29);
     color: white;
-    padding: 23px;
+    padding: 12px 12px 12px 23px;
     border-radius: .5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
     h1{
         font-size: 21px;
         line-height: 16px;
