@@ -3,9 +3,16 @@ import styled from 'styled-components'
 import Token from './token'
 
 const TableStyled = styled.div`
-display:flex;
-flex-wrap:wrap;
-justify-content:space-between
+display:grid;
+grid-template-columns: 130px 130px;
+justify-content:center;
+justify-items:center;
+grid-gap:  15px 50px;
+
+& div:nth-of-type(3){
+    grid-column: span 2;
+    
+}
 
 `
 
@@ -13,9 +20,9 @@ justify-content:space-between
 function Table() {
     return (
         <TableStyled>
-            <Token name='rock' />
-            <Token name='scissors' />
             <Token name='paper' />
+            <Token name='scissors' />
+            <Token name='rock' />
         </TableStyled>
     )
 }

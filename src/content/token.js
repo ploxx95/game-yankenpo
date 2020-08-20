@@ -6,12 +6,11 @@ const TokenStyled = styled.div`
     padding:14px;
     border-radius:50%;
     box-shadow: 0 5px 0 ${({ color }) => color.border}; 
+    width : 100px;
     
     .circle{
-        width : 100px;
+     
     height: 95px;
-    
-    
     border-radius: 50%;
     display: flex;
     justify-content: center;
