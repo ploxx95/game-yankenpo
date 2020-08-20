@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import Wrapper from './content/wrapper'
 import Table from './content/table'
 import AppContent from './content/app_content';
+import BtnRules from './content/btnrules';
 
 
 const AppStyled = styled.main`
@@ -26,6 +27,7 @@ function App() {
         <AppContent>
           <Header />
           <Table />
+          <BtnRules />
         </AppContent>
       </Wrapper>
     </AppStyled>

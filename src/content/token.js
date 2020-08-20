@@ -24,8 +24,6 @@ const TokenStyled = styled.div`
         transform: scale(.9)
     }   
 
-
-
 `
 const colors = {
     paper: {
