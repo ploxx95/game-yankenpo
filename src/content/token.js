@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 const TokenStyled = styled.div`
+    &&{padding:14px;}
     background:linear-gradient(to bottom,  ${({ color }) => color.base1} , ${({ color }) => color.base2} );
-    padding:14px;
     border-radius:50%;
     box-shadow: 0 5px 0 ${({ color }) => color.border}; 
     width : 100px;

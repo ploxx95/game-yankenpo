@@ -1,22 +1,23 @@
 import React from 'react'
 import styled from "styled-components";
+import Buttons from './buttons';
+import PortalRules from './portalRules';
+//import Imgules from './image-rules.svg';
 
 const BtnRulesStyled = styled.div`
-    border: 1px solid white;
-    border-radius:5px;
-    padding:.5em;
-    text-transform: uppercase;
-    font-weight:600;
-    
-    text-align:center;
-    
+   &&{margin:2em;}
+   text-align:center;
+   
 `
-
-
 function BtnRules() {
+    function handleTogleClick() {
+        console.log('kakasssss');
+    }
     return (
         <BtnRulesStyled>
-            <span>rules</span>
+            <PortalRules onClick={handleTogleClick} />
+            <Buttons >
+            </Buttons>
         </BtnRulesStyled>
     )
 }

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Token from './token'
 
 const TableStyled = styled.div`
+&&{margin:2em;}
 display:grid;
 grid-template-columns: 130px 130px;
 justify-content:center;

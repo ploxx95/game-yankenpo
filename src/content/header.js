@@ -4,14 +4,14 @@ import Score from './score'
 
 
 const HeaderStyled = styled.div`
+&&{ padding: 12px 12px 12px 23px;}   
     border: 2px solid rgba(255, 255,255,.29);
     color: white;
-    padding: 12px 12px 12px 23px;
     border-radius: .5em;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    box-sizing:border-box;
     h1{
         font-size: 21px;
         line-height: 16px;

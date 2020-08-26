@@ -9,9 +9,10 @@ import BtnRules from './content/btnrules';
 
 
 const AppStyled = styled.main`
-body{
   font-family: 'Barlow Semi Condensed', sans-serif;
-}
+  *{margin:0px;
+  padding:0px;}
+
 background-image: radial-gradient(circle at top, #1F3757 20%, #131537 100%);
 min-height: calc(100vh - 4em);
 padding: 2em;
