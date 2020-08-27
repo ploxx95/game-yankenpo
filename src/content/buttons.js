@@ -17,9 +17,9 @@ const ButtonsStyled = styled.div`
 
 
 
-function Buttons() {
+function Buttons(props) {
     return (
-        <ButtonsStyled>
+        <ButtonsStyled onClick={props.onClick}>
             <span>rules</span>
         </ButtonsStyled>
     )

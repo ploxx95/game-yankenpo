@@ -3,12 +3,21 @@ import styled from 'styled-components'
 import Token from './token'
 
 const TableStyled = styled.div`
+background: url('./images/bg-triangle.svg') center bottom ;
+background-size: auto 83%;
+background-repeat: no-repeat;
+background-position:center bottom;
+
+
+
 &&{margin:2em;}
 display:grid;
 grid-template-columns: 130px 130px;
 justify-content:center;
 justify-items:center;
-grid-gap:  15px 50px;
+grid-gap:  25px 50px;
+
+
 
 & div:nth-of-type(3){
     grid-column: span 2;
