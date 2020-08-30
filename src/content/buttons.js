@@ -17,12 +17,19 @@ const ButtonsStyled = styled.div`
 
 
 
-function Buttons(props) {
+function Buttons({ children = 'default', ...props }) {
     return (
-        <ButtonsStyled onClick={props.onClick}>
-            <span>rules</span>
+        <ButtonsStyled {...props}>
+            {children}
         </ButtonsStyled>
     )
 }
+
+export const WhiteButtons = styled(ButtonsStyled)`
+background:white;
+color:#101a3f;
+min-width:220px;
+&&{padding: .9em;}
+`
 
 export default Buttons

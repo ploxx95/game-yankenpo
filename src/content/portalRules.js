@@ -1,9 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
-import Buttons from './buttons';
-
-
 
 const PortalRulesStyled = styled.div`
 font-family:'Barlow Semi Condensed', sans-serif;
@@ -49,7 +46,7 @@ class PortalRules extends React.Component {
                 <h3 >Rules</h3 >
 
                 <span onClick={this.props.onClose}>
-                    <img src='./images/icon-close.svg' ></img>
+                    <img src='./images/icon-close.svg' alt='rules' ></img>
                 </span>
 
             </PortalRulesStyled >, document.getElementById('portal')

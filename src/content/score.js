@@ -4,26 +4,20 @@ import styled from 'styled-components'
 const ScoreStyled = styled.div`
     background-color: white;
     text-align:center;
-    padding: 10px 0;
+    &&{padding:7px 1.5em 7px 1.5em}
     border-radius: 5px;
-    width: 85px;
-    
     small{
-        margin: 0;
+        
         color: #2A45C2;
         text-transform: uppercase;
-        font-size: 10px;
-        font-family: 'Barlow Semi Condensed', sans-serif;
-        
+        font-size: 10px;   
     }
     p{
         color: #565468;
-        font-size: 40px;
-        margin: 0px;
-        font-family:'Barlow Semi Condensed', sans-serif;
+        font-size: 2.8em;
         font-weight: 700;
         letter-spacing: -1px;
-        
+        margin-top: -5px;
     }
 `
 
@@ -31,7 +25,6 @@ const ScoreStyled = styled.div`
 function Score() {
     return (
         <ScoreStyled>
-
             <small>Score</small>
             <p>12</p>
         </ScoreStyled>

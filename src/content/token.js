@@ -42,14 +42,11 @@ const colors = {
         border: 'hsl(28, 76.1%, 44.3%)',
     }
 }
-
-
-
-
-function Token({ name }) {
+function Token({ onClick, name }) {
+    const handle = () => onClick(name)
     return (
         <TokenStyled color={colors[name]} >
-            <div className="circle">
+            <div className="circle" onClick={handle}>
                 <img src={`./images/icon-${name}.svg`} alt="" />
             </div>
         </TokenStyled>

@@ -1,14 +1,12 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import styled from "styled-components";
 import Buttons from './buttons';
 import PortalRules from './portalRules';
 //import Imgules from './image-rules.svg';
 
 const BtnRulesStyled = styled.div`
-   &&{margin:2em;}
-   text-align:center;
-  
    
+   text-align:center;
 `
 class BtnRules extends React.Component {
     state = {
@@ -19,7 +17,9 @@ class BtnRules extends React.Component {
     render() {
         return (
             <BtnRulesStyled>
-                <Buttons onClick={this._openModal} />
+                <Buttons onClick={this._openModal}>
+                    rules
+                </Buttons>
                 {
                     this.state.modalOpen &&
                     <PortalRules
