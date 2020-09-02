@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react'
+import React, { useState, Fragment, useEffect } from 'react'
 import styled from 'styled-components'
 import Token from './token'
 import { WhiteButtons } from './buttons'
@@ -47,6 +47,24 @@ const element = [
     'rock'
 ]
 
+function method(setUseInterval, interval, setItem, item, toggleFlag, flag) {
+    setUseInterval(interval * 1.08)
+    setTimeout(() => {
+        if (item == 0) {
+            setItem(item + 1)
+        }
+        if (item == 1) {
+            setItem(item + 1)
+        }
+        if (item == 2) {
+            setItem(item - 2)
+        }
+    }, interval)
+    if (interval > 890) {
+        return toggleFlag(!flag)
+    }
+}
+
 
 function Table() {
     const [usePlay, setUsePlay] = useState(true)
@@ -54,15 +72,64 @@ function Table() {
     const [useErase, setUseErase] = useState(false)
     const [useAi, setUseAi] = useState('')
     const [useWin, setUseWin] = useState('')
+    //const [usenumber, setUseNumber] = useState(1)
+
+    const [flag, toggleFlag] = useState(false);
+    const [item, setItem] = useState(0)
+    const [interval, setUseInterval] = useState(1)
+
+    useEffect(() => {
+        if (flag === true) {
+            method(setUseInterval, interval, setItem, item, toggleFlag, flag)
+        }
+
+        console.log('esto es position : ', item);
+        return () => {
+
+        }
+    }, [item, flag])
+
+    //primera opcion fallida de chocolatear
+    // const chocolateando = () => {
+
+    //     let interval = 1
+    //     const goToRulet = () => {
+    //         if (usenumber === 0) {
+    //             setUseNumber(usenumber + 1)
+    //             console.log('a')
+    //         } else if (usenumber === 1) {
+    //             setUseNumber(usenumber + 1)
+    //             console.log('b')
+    //         } else if (usenumber === 2) {
+    //             setUseNumber(usenumber + 1)
+    //             console.log('c')
+    //         }
+
+
+    //         if (interval > 500) {
+    //             return
+    //         }
+
+
+    //         interval *= 1.05
+    //         setTimeout(goToRulet, interval)
+    //         console.log(interval)
+    //     }
+    //     setTimeout(goToRulet, interval)
+
+    // }
+
+
 
     function onClick(name) {
         setUsePlay(false)
         setUsePick(name)
         setUseErase(true)
-        const pickAi = element[getRandom(0, 3)]
+        const pickAi = element[item]
         setUseAi(pickAi)
         const result = win(name, pickAi)
         setUseWin(result)
+        toggleFlag(true)
     }
     function getRandom(min, max) {
         return Math.floor(Math.random() * (max - min) + min)
