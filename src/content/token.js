@@ -53,5 +53,8 @@ function Token({ onClick, name }) {
 
     )
 }
+Token.defaultProps = {
+    onClick: () => console.log('nada')
+}
 
 export default Token

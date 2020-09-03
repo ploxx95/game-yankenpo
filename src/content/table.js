@@ -48,21 +48,22 @@ const element = [
 ]
 
 function method(setUseInterval, interval, setItem, item, toggleFlag, flag) {
-    setUseInterval(interval * 1.08)
-    setTimeout(() => {
-        if (item == 0) {
-            setItem(item + 1)
-        }
-        if (item == 1) {
-            setItem(item + 1)
-        }
-        if (item == 2) {
-            setItem(item - 2)
-        }
-    }, interval)
     if (interval > 890) {
         return toggleFlag(!flag)
     }
+    setUseInterval(interval * 1.08)
+    setTimeout(() => {
+        if (item === 0) {
+            setItem(item + 1)
+        }
+        if (item === 1) {
+            setItem(item + 1)
+        }
+        if (item === 2) {
+            setItem(item - 2)
+        }
+    }, interval)
+
 }
 
 
@@ -77,13 +78,15 @@ function Table() {
     const [flag, toggleFlag] = useState(false);
     const [item, setItem] = useState(0)
     const [interval, setUseInterval] = useState(1)
+    const [prueba, setprueba] = useState('TRATRA')
 
     useEffect(() => {
         if (flag === true) {
             method(setUseInterval, interval, setItem, item, toggleFlag, flag)
         }
-
-        console.log('esto es position : ', item);
+        const testteo = element[item]
+        setprueba(testteo)
+        //console.log('esto es position : ', item);
         return () => {
 
         }
@@ -134,7 +137,10 @@ function Table() {
     function getRandom(min, max) {
         return Math.floor(Math.random() * (max - min) + min)
     }
-    const playAgain = () => setUsePlay(true)
+    const playAgain = () => {
+        setUsePlay(true)
+        setUseErase(false)
+    }
 
     function win(jugador, openai) {
         if (jugador === openai) {
@@ -184,17 +190,18 @@ function Table() {
                     :
                     <Fragment>
                         <div className='parrafo-picked' >
-                            <Token name={usePick} onClick={onClick} />
+                            <Token name={usePick} />
                             <p>You Pick</p>
                         </div>
                         <div className='parrafo-picked'>
-                            <Token name={useAi} onClick={onClick} />
+                            <Token name={useAi} />
                             <p>Picked Ai</p>
                         </div>
                         <div className='container-result' >
                             <h2>You {useWin}</h2>
                             <WhiteButtons onClick={playAgain}>Play Again</WhiteButtons>
                         </div>
+                        <h1></h1>
 
                     </Fragment>
 
