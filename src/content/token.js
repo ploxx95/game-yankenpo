@@ -54,7 +54,8 @@ function Token({ onClick, name }) {
     )
 }
 Token.defaultProps = {
-    onClick: () => console.log('nada')
+    onClick: () => console.log('nada'),
+    name: 'rock'
 }
 
 export default Token

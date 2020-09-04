@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import './App.css';
 import Header from './content/header'
 import styled from 'styled-components'
@@ -7,6 +7,7 @@ import Table from './content/table'
 import AppContent from './content/app_content';
 import BtnRules from './content/btnrules';
 
+export const ScoreContext = createContext()
 
 const AppStyled = styled.main`
   font-family: 'Barlow Semi Condensed', sans-serif;
@@ -23,16 +24,23 @@ color: white;
 
 
 function App() {
+  const [score, setScore] = useState(0)
   return (
-    <AppStyled>
-      <Wrapper>
-        <AppContent>
-          <Header />
-          <Table />
-          <BtnRules />
-        </AppContent>
-      </Wrapper>
-    </AppStyled>
+    <ScoreContext.Provider value={{
+      score,
+      setScore
+    }}>
+      <AppStyled>
+        <Wrapper>
+          <AppContent>
+            <Header />
+            <Table />
+            <BtnRules />
+          </AppContent>
+        </Wrapper>
+      </AppStyled>
+    </ScoreContext.Provider>
+
 
   );
 }
